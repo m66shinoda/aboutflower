@@ -1,0 +1,150 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+.l_header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color .3s linear;
+
+    @include touch {
+        height: 70px;
+    }
+
+    @include desktop {
+        display: flex;
+        height: 100px;
+        padding: 0 32px 0 40px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #fff;
+    }
+
+    // ヘッダーのリンク共有
+    a {}
+
+    // インナー
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        padding: 0 20px;
+        background-color: #fff;
+        width: 100%;
+
+        @include desktop {
+            height: 100px;
+            padding: 0;
+        }
+    }
+
+    // ロゴ
+    &__logo {
+        width: 160px;
+        height: auto;
+        @include ov;
+
+        @include desktop {
+            width: 240px;
+        }
+
+        svg {
+            width: 160px;
+            height: 40px;
+
+            @include desktop {
+                width: 240px;
+                height: 60px;
+            }
+        }
+
+        path {
+            fill: #3e2b00;
+        }
+    }
+
+    // ハンバーガーボタン
+    &__btn {
+        width: 32px;
+        height: 20px;
+        padding-right: 5px;
+        background: none;
+        display: block;
+        // z-index: 500;
+
+        @include desktop {
+            display: none;
+        }
+
+        span {
+            position: relative;
+            display: block;
+            height: 2px;
+            background: #000;
+            transition: all 0.3s;
+
+            &::before,
+            &::after {
+                position: absolute;
+                left: 0;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: #000;
+                transition: all 0.3s;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                bottom: -10px;
+            }
+        }
+    }
+
+    // ハンバーガーメニュー展開時のスタイル
+    @at-root body.is-openMenu {
+        @include touch {
+
+            // ヘッダー
+            .l_header {
+                background-color: $color_bg_dark;
+            }
+
+            .l_header__inner {
+                background-color: transparent;
+            }
+
+            // ロゴ
+            .l_header__logo path {
+                fill: #fff;
+            }
+
+            // ボタン
+            .l_header__btn {
+                span {
+                    background: transparent;
+
+                    &::before,
+                    &::after {
+                        top: 0;
+                        background-color: #fff;
+                    }
+
+                    &::before {
+                        rotate: 45deg;
+                    }
+
+                    &::after {
+                        rotate: -45deg;
+                    }
+                }
+            }
+        }
+    }
+}
