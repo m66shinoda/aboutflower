@@ -92,6 +92,15 @@ legend {
   display: none;
 }
 
+.l_container {
+  padding-top: 100px;
+}
+@media (max-width: 999px) {
+  .l_container {
+    padding-top: 70px;
+  }
+}
+
 .l_header {
   position: fixed;
   top: 0;
@@ -217,4 +226,124 @@ legend {
   body.is-openMenu .l_header__btn span::after {
     rotate: -45deg;
   }
+}
+
+.l_gnav {
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+@media (max-width: 719px) {
+  .l_gnav {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 70px;
+  }
+}
+@media (max-width: 999px) {
+  .l_gnav {
+    padding-top: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  .l_gnav {
+    opacity: 1;
+  }
+}
+body.is-openMenu .l_gnav {
+  pointer-events: auto;
+  opacity: 1;
+  height: calc(100vh - 70px);
+  background-color: #a18f67;
+}
+@media (min-width: 1000px) {
+  body.is-openMenu {
+    display: none;
+  }
+}
+
+.l_gnav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+@media (min-width: 1000px) {
+  .l_gnav__list {
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100px;
+  }
+}
+.l_gnav__item {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+@media (min-width: 1000px) {
+  .l_gnav__item {
+    font-size: 15px;
+    font-size: 0.9375rem;
+  }
+}
+@media (max-width: 999px) {
+  .l_gnav__item + .l_gnav__item {
+    margin-top: 26px;
+  }
+}
+.l_gnav__item a {
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+@media (min-width: 1000px) {
+  .l_gnav__item a {
+    color: #9b875a;
+  }
+}
+@media (min-width: 1000px) {
+  .l_gnav__item._cart {
+    margin-left: 16px;
+  }
+}
+
+.l_breadcrumb {
+  padding: 16px 20px 22px;
+  background-color: #e2ded4;
+}
+@media (min-width: 1000px) {
+  .l_breadcrumb {
+    padding: 16px 40px 22px;
+  }
+}
+.l_breadcrumb__list {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.l_breadcrumb__item {
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-family: "Lato", sans-serif;
+  margin-top: 6px;
+}
+.l_breadcrumb__item + .l_breadcrumb__item::before {
+  content: "/";
+  margin: 0 0.5rem;
+}
+.l_breadcrumb__item a {
+  text-decoration: none;
+}
+.l_breadcrumb__item a:hover {
+  opacity: 0.5;
+}
+.l_breadcrumb strong {
+  line-height: 1;
 }
