@@ -1,0 +1,62 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+// KV
+.c_kv {
+    overflow: hidden;
+    background-color: #ded6c5;
+    aspect-ratio: 3 / 4;
+
+    @include desktop {
+        aspect-ratio: initial; // 初期値 initialだとブラウザ依存、数値なら 16 / 9
+        height: 360px;
+    }
+
+    &__inner {
+        width: 100%;
+
+        @include desktop {
+            max-width: 1024px;
+            height: 360px;
+            margin: 0 auto;
+        }
+    }
+
+    // TODO: スライドショーのスタイル
+}
+
+// セクション
+.c_section {
+    &__header {
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 28px;
+
+        @include desktop {
+            padding-bottom: 38px;
+            margin-bottom: 50px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: #9b875a;
+            bottom: 0;
+            left: 50%;
+            translate: -50% 0;
+        }
+
+        &Title {
+            text-transform: uppercase;
+            @include fz(16);
+            @include font-webfont_Lato;
+            text-align: center;
+
+            @include desktop {
+                @include fz(30);
+            }
+        }
+    }
+}

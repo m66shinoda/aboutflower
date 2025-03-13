@@ -347,3 +347,66 @@ body.is-openMenu .l_gnav {
 .l_breadcrumb strong {
   line-height: 1;
 }
+
+.l_main {
+  min-height: 500px;
+  padding-bottom: 40px;
+  background-color: #ebe9e4;
+}
+
+.c_kv {
+  overflow: hidden;
+  background-color: #ded6c5;
+  aspect-ratio: 3/4;
+}
+@media (min-width: 1000px) {
+  .c_kv {
+    aspect-ratio: initial;
+    height: 360px;
+  }
+}
+.c_kv__inner {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .c_kv__inner {
+    max-width: 1024px;
+    height: 360px;
+    margin: 0 auto;
+  }
+}
+
+.c_section__header {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 28px;
+}
+@media (min-width: 1000px) {
+  .c_section__header {
+    padding-bottom: 38px;
+    margin-bottom: 50px;
+  }
+}
+.c_section__header::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  background-color: #9b875a;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+.c_section__headerTitle {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+@media (min-width: 1000px) {
+  .c_section__headerTitle {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}

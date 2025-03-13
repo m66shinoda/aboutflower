@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
     <!-- コンテンツ記述部分 -->
     <div class="l_container">
         <!---------------------------- HEADER ---------------------------->
@@ -37,11 +36,14 @@
                         </svg>
                         </text></g>
                         </svg>
-                    </a></h1>
+                    </a>
+                </h1>
+
                 <!---------- hamburger button ---------->
                 <button class="l_header__btn" type="button" id="header-btn" title="メニュー開閉">
                     <span></span>
                 </button>
+
                 <!---------- navigation ---------->
                 <nav class="l_gnav">
                     <ul class="l_gnav__list">
@@ -56,7 +58,8 @@
                 </nav> <!-- /.l_gnav -->
             </div> <!-- /.l_header__inner -->
         </header> <!-- /.l_header -->
-        <!---------------------------- BREADCRUMB ---------------------------->
+
+        <!---------- BREADCRUMB ---------->
         <div class="l_breadcrumb">
             <ul class="l_breadcrumb__list">
                 <li class="l_breadcrumb__item"><a href="#">HOME</a></li>
@@ -64,9 +67,44 @@
                 <li class="l_breadcrumb__item _current"><strong>現在のページタイトル</strong></li>
             </ul> <!-- /.l_breadcrumb__list -->
         </div> <!-- /.l_breadcrumb -->
+
+        <!---------- KV ---------->
+        <div class="c_kv">
+            <div class="c_kv__inner">
+                <div class="swiper-container" id="kv">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <!-- <source type="image/webp" srcset="assets/img/kv/main01.webp"> -->
+                                <source media="(min-width: 980px)"
+                                    srcset="assets/img/kv/main01.jpg 1x,assets/img/kv/main01@2x.jpg 2x">
+                                <source media="(max-width: 979px)"
+                                    srcset="assets/img/kv/main01_sp.jpg 1x,assets/img/kv/main01_sp@2x.jpg 2x">
+                                <img src="assets/img/kv/main01.jpg" alt="About Flower">
+                                <!-- ↑sourceタグの画像が表示されなかった時の念の為のimfタグ -->
+                            </picture>
+                        </div>
+                    </div> <!-- /.swiper-wrapper -->
+                </div> <!-- /.swiper-container #kv -->
+                <!-- TODO: スライドショーの設定 -->
+            </div> <!-- /.c_kv__inner -->
+        </div> <!-- /.c_kv -->
+
+
         <!---------------------------- MAIN ---------------------------->
-        <main>
-        </main>
+        <main class="l_main">
+            <div class="c_section">
+                <div class="c_section__header">
+                    <h2 class="c_section__headerTitle">Seasonal Flower</h2>
+                </div> <!-- /.c_section__header -->
+
+                <div class="c_cards">
+                    <div class="c_cards__item e_card"></div>
+                </div> <!-- /.c_cards -->
+            </div> <!-- /.c_section -->
+        </main> <!-- /l_main -->
+
+
         <!---------------------------- FOOTER ---------------------------->
         <footer class="l__footer">
             <div class="l_footer__inner">
@@ -102,6 +140,7 @@
             </div>
         </footer> <!-- /.l__footer -->
     </div> <!-- /.l_container -->
+    <!-- コンテンツ記述部分 -->
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
