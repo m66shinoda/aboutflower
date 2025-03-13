@@ -1,0 +1,77 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+.e_card {
+    display: block;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 3px;
+
+    @include desktop {
+        border-radius: 6px;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        @include ov_zoomimg;
+
+        &:hover {
+            .e_card__title {
+                color: #9b875a;
+            }
+        }
+    }
+
+    // サムネイル
+    &__thumb {
+        height: 33.3vw;
+        display: block;
+        overflow: hidden;
+
+        @include desktop {
+            height: 180px;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+
+            @include desktop {
+                height: auto;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 80px;
+        padding: 6px 10px 14px;
+
+        @include desktop {
+            padding: 10px 16px 14px;
+        }
+    }
+
+    &__title {
+        @include fz(12);
+        transition: color .2s;
+
+        @include desktop {
+            @include fz(16);
+        }
+    }
+
+    &__price {
+        line-height: 1;
+        color: #9b875a;
+        text-align: end;
+        @include fz(14);
+
+        @include desktop {
+            @include fz(16);
+        }
+    }
+}
