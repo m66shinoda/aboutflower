@@ -60,3 +60,40 @@
         }
     }
 }
+
+// カード
+.c_cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include touch {
+        margin-inline: 4px;
+    }
+
+    @include desktop {
+        max-width: 1000px;
+        // margin-top: inherit;
+        margin-inline: auto;
+    }
+
+    &__item {
+        width: 32%;
+        margin-top: 2%;
+        margin-left: 2%;
+
+        @include desktop {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        // 1行目のスタイル
+        &__item:nth-child(-n + 3) {
+            margin-top: 0;
+        }
+
+        // 1列目のスタイル
+        &__item:nth-child(3n+1) {
+            margin-left: 0;
+        }
+    }
+}
