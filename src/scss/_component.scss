@@ -232,3 +232,75 @@
         }
     }
 }
+
+// ポイント
+.c_point {
+    @include desktop {
+        background-color: #fff;
+    }
+
+    &__inner {
+        @include desktop {
+            max-width: 1000px;
+            padding-top: 45px;
+            padding-bottom: 50px;
+            margin: 0 auto;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 25px;
+        background-color: $color_bg;
+
+        @include desktop {
+            padding: 36px 25px;
+            margin-top: 40px;
+            flex-direction: row;
+        }
+    }
+
+    &__item {
+        padding: 20px;
+
+        @include touch {
+            background-color: #fff;
+        }
+
+        @include desktop {
+            width: calc(100% / 3);
+            padding: 0 20px 58px;
+        }
+
+        &+& {
+            border-top: 2px solid $color_border;
+
+            @include desktop {
+                border-top: none;
+                border-left: 2px solid $color_primary;
+            }
+        }
+
+        &Title {
+            @include fz(16);
+            font-weight: bold;
+            line-height: 1.65;
+
+            @include desktop {
+                @include fz(24);
+                line-height: 1.5;
+            }
+        }
+
+        &Text {
+            margin-top: 10px;
+            @include fz(16);
+            line-height: 1.5;
+
+            @include mobile {
+                @include fz(12);
+            }
+        }
+    }
+}
