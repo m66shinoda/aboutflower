@@ -372,8 +372,12 @@
 
             &+& {
                 &::before {
-                    content: "　|　";
+                    content: " | ";
                     color: #fff;
+
+                    @include desktop {
+                        content: none;
+                    }
                 }
             }
 

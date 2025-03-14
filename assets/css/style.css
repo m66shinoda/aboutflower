@@ -424,8 +424,13 @@ body.is-openMenu .l_gnav {
   text-transform: uppercase;
 }
 .l_footer__navItem + .l_footer__navItem::before {
-  content: "　|　";
+  content: " | ";
   color: #fff;
+}
+@media (min-width: 1000px) {
+  .l_footer__navItem + .l_footer__navItem::before {
+    content: none;
+  }
 }
 .l_footer__navItem a {
   color: #fff;
