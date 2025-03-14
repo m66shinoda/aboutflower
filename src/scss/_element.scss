@@ -75,3 +75,53 @@
         }
     }
 }
+
+// ボタン
+a,
+button,
+input {
+    &.e_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 52px;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bold;
+        height: 50px;
+        transition: .3s ease-in-out;
+        border-radius: 24px;
+        @include fz(16);
+
+        @include desktop {
+            padding: 0 70px;
+        }
+
+        &+& {
+            margin-left: 10px;
+        }
+
+        // 色
+        &._white {
+            color: #000;
+            background-color: #fff;
+            border: 2px solid #000;
+
+            &:hover {
+                color: #fff;
+                background-color: #000;
+            }
+        }
+
+        &._brown {
+            color: #fff;
+            background-color: $color_primary;
+            border: 2px solid $color_primary;
+
+            &:hover {
+                color: $color_primary;
+                background-color: #fff;
+            }
+        }
+    }
+}
