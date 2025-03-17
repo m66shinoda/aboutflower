@@ -304,3 +304,88 @@
         }
     }
 }
+
+// カート
+.c_cart {
+    padding-top: 25px;
+
+    &__inner {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    &__item {
+        background-color: #fff;
+
+        &+& {
+            margin-top: 6px;
+        }
+
+        &Link {
+            display: flex;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        &Thumb {
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            img {
+                object-fit: cover;
+                width: auto;
+                height: 100%;
+                max-width: inherit;
+            }
+        }
+
+        &Body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 20px;
+            flex: auto;
+        }
+
+        &Title {
+            margin-top: -4px;
+        }
+
+        &Price {
+            @include fz(14);
+            font-weight: bold;
+            text-align: end;
+        }
+    }
+
+    &__price {
+        margin: 20px 20px 0;
+
+        @include desktop {
+            margin: 30px 0 0;
+        }
+
+        &Item {
+            font-weight: bold;
+            line-height: 1;
+            text-align: end;
+            @include fz(30);
+
+            &+& {
+                margin-top: 16px;
+
+                @include desktop {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        &Text {
+            @include fz(16);
+            margin-right: 10px;
+            font-weight: normal;
+        }
+    }
+}
