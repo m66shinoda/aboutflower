@@ -477,6 +477,33 @@ body.is-openMenu .l_gnav {
     margin: 0 auto;
   }
 }
+.c_kv .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.c_kv .swiper-container .swiper-slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.c_kv .swiper-container .swiper-slide picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.c_kv .swiper-container .swiper-pagination {
+  bottom: 18px;
+}
+.c_kv .swiper-container .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+}
+.c_kv .swiper-container .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #9b875a;
+}
 
 .c_section__header {
   position: relative;
