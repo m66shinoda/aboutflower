@@ -389,3 +389,61 @@
         }
     }
 }
+
+// ログイン
+.c_memberLogin {
+    padding-top: 40px;
+
+    @include desktop {
+        padding-top: 80px;
+    }
+}
+
+// フォーム
+.c_form {
+    margin: 12px 15px 0;
+
+    @include desktop {
+        width: 400px;
+        margin: 60px auto 0;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        &+& {
+            margin-top: 34px;
+        }
+    }
+
+    &__label {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 12px 15px;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 0;
+
+        &::placeholder {
+            color: #666;
+        }
+    }
+
+    .e_btnWrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+
+        &__note {
+            margin-top: 20px;
+            @include fz(12);
+        }
+    }
+}

@@ -70,6 +70,7 @@
 
         <!---------------------------- MAIN ---------------------------->
         <main class="l_main">
+            <!---------- CART ---------->
             <section class="c_section c_cart">
                 <div class="c_section__header">
                     <h2 class="c_section__headerTitle">Cart</h2>
@@ -123,6 +124,31 @@
                     </ul> <!-- /.c_cart__price -->
                 </div> <!-- /.c_cart__inner -->
             </section> <!-- /.c_section .c_cart -->
+
+            <!---------- FORM ---------->
+            <section class="c_section c_memberLogin">
+                <div class="c_section__header">
+                    <h2 class="c_section__headerTitle">MEMBER LOGIN</h2>
+                </div> <!-- /.c_section__header -->
+                <form action="" method="post" class="c_form">
+                    <div class="c_form__group">
+                        <label for="member_id" class="c_form__label">会員ID/メールアドレス</label>
+                        <input type="text" class="c_form__input" id="member_id" name="member_id" placeholder="テキストが入ります"
+                            autocapitalize="none" autocorrect="off" spellcheck="false" required>
+                    </div> <!-- /.c_form__group -->
+                    <div class="c_form__group">
+                        <label for="member_password" class="c_form__label">パスワード</label>
+                        <input type="password" class="c_form__input" id="member_password" name="member_password"
+                            required>
+                    </div> <!-- /.c_form__group -->
+                    <div class="e_btnWrap">
+                        <button class="e_btn _brown" type="submit">ログインして購入する</button>
+                        <p class="e_btnWrap__note">
+                            <a href="#">新規会員登録して購入する</a>
+                        </p>
+                    </div> <!-- /.e_btnWrap -->
+                </form> <!-- /.c_form -->
+            </section> <!-- /.c_section .c_memberLogin -->
         </main> <!-- /l_main -->
 
 

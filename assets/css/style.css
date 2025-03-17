@@ -834,6 +834,62 @@ body.is-openMenu .l_gnav {
   font-weight: normal;
 }
 
+.c_memberLogin {
+  padding-top: 40px;
+}
+@media (min-width: 1000px) {
+  .c_memberLogin {
+    padding-top: 80px;
+  }
+}
+
+.c_form {
+  margin: 12px 15px 0;
+}
+@media (min-width: 1000px) {
+  .c_form {
+    width: 400px;
+    margin: 60px auto 0;
+  }
+}
+.c_form__group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.c_form__group + .c_form__group {
+  margin-top: 34px;
+}
+.c_form__label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.c_form input[type=text],
+.c_form input[type=password] {
+  padding: 12px 15px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+.c_form input[type=text]::-moz-placeholder, .c_form input[type=password]::-moz-placeholder {
+  color: #666;
+}
+.c_form input[type=text]::placeholder,
+.c_form input[type=password]::placeholder {
+  color: #666;
+}
+.c_form .e_btnWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.c_form .e_btnWrap__note {
+  margin-top: 20px;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
 .e_card {
   display: block;
   overflow: hidden;
