@@ -21,4 +21,26 @@ $(function () {
             el: '.swiper-pagination',
         }
     });
+
+    // 商品詳細スライダー
+    // サムネイル
+    const galleryThumbs = new Swiper('#gallery-thumbs', {
+        slidesPerView: 'auto',
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+
+    // メインスライド
+    new Swiper('#detail-slide', {
+        loop: true,
+        effect: 'fade',
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
 })();

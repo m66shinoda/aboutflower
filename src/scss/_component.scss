@@ -26,34 +26,35 @@
     .swiper-container {
         width: 100%;
         height: 100%;
+    }
 
-        .swiper-slide {
-            picture {
-                display: block;
+    .swiper-slide {
+        picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
                 width: 100%;
                 height: 100%;
-
-                img {
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                }
             }
         }
+    }
 
-        .swiper-pagination {
-            bottom: 18px;
-        }
+    .swiper-pagination {
+        bottom: 18px;
+    }
 
-        .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background-color: #fff;
-            opacity: 1;
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        opacity: 1;
 
-            &.swiper-pagination-bullet-active {
-                background-color: #9b875a;
-            }
+        &.swiper-pagination-bullet-active {
+            background-color: #9b875a;
+
         }
     }
 }
@@ -156,12 +157,43 @@
 
         @include desktop {
             max-width: 600px;
-            margin-top: -20px;
+            // margin-top: -20px;
         }
     }
 
     &__slide {
-        // TODO: スライドショーのスタイル
+        .swiper-slide {
+            @include desktop {
+                height: 600px;
+            }
+
+            img {
+                object-fit: cover;
+                max-width: inherit;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            @include ov;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-image: url(../img/common/arrow.png);
+                background-size: 100% auto;
+            }
+        }
+
+        .swiper-button-prev {
+            rotate: 180deg;
+        }
     }
 
     &__thumbs {
@@ -175,7 +207,39 @@
             margin-top: 20px;
         }
 
-        // TODO: スライドショーの設定（サムネイル）
+        // スライド
+        .swiper-slide {
+            width: 100px;
+            height: inherit;
+            margin-left: 10px;
+
+            &.swiper-slide-thumb-active {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid $color_primary;
+                    pointer-events: none;
+                    z-index: 5;
+                }
+            }
+
+            &:nth-child(1) {
+                margin-left: 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 
     &__contents {
