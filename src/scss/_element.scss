@@ -113,6 +113,12 @@ input {
             }
         }
 
+        &._white-ol {
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #fff;
+        }
+
         &._brown {
             color: #fff;
             background-color: $color_primary;

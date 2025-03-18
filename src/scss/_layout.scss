@@ -234,6 +234,7 @@
             color: #fff;
             text-align: center;
             font-weight: bold;
+            text-decoration: none;
 
             @include desktop {
                 color: $color_secondary;
@@ -246,7 +247,26 @@
                 margin-left: 16px;
             }
 
-            // TODO: エレメントコンポーネントのスタイル挿入
+            .e_btn {
+                width: 250px;
+                padding: 0;
+                line-height: 48px;
+                transition: background-color .2s;
+
+                @include desktop {
+                    color: $color_secondary;
+                    border-color: $color_secondary;
+                    width: 136px;
+                    line-height: 36px;
+                    height: auto;
+                }
+
+                &:hover {
+                    color: #fff;
+                    background-color: $color_secondary;
+                    transition: .5s;
+                }
+            }
         }
     }
 }
